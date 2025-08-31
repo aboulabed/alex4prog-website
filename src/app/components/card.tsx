@@ -1,13 +1,13 @@
 import React from 'react';
 
-type ServiceCardProps = {
+type CardProps = {
     image: string;
     title: string;
     description: string;
     icon: React.ReactNode;
 };
 
-export default function ServiceCard({ image, title, description, icon }: ServiceCardProps) {
+export default function Card({ image, title, description, icon }: CardProps) {
     return (
         <div className="bg-white rounded-xl shadow-md overflow-hidden transition-transform hover:-translate-y-1 duration-300 relative">
             {/* Image */}
