@@ -1,34 +1,25 @@
 'use client';
 import Link from 'next/link';
 import Card from './Card'
-import { Settings } from 'lucide-react'
 import { useTranslations, useLocale } from 'next-intl';
 import { motion } from 'motion/react';
 
-const services = [
+const projects = [
     {
         title: 'Web Design',
         description: 'We provide professional website design services compatible with all devices. We help improve your website’s ranking in search engine results. We help improve your website’s ranking in search engine results. We help improve your website’s ranking in search engine results. We help improve your website’s ranking in search engine results. ',
-        image: 'https://images.pexels.com/photos/2047905/pexels-photo-2047905.jpeg',
-        icon: <Settings />
     },
     {
         title: 'App Development',
         description: 'We develop modern applications using the latest technologies. We help improve your website’s ranking in search engine results. We help improve your website’s ranking in search engine results. We help improve your website’s ranking in search engine results. We help improve your website’s ranking in search engine results. ',
-        image: 'https://images.pexels.com/photos/2047905/pexels-photo-2047905.jpeg',
-        icon: <Settings />
     },
     {
         title: 'Search Engine Optimization (SEO)',
         description: 'We help improve your website’s ranking in search engine results. We help improve your website’s ranking in search engine results. We help improve your website’s ranking in search engine results. We help improve your website’s ranking in search engine results. We help improve your website’s ranking in search engine results. ',
-        image: 'https://images.pexels.com/photos/2047905/pexels-photo-2047905.jpeg',
-        icon: <Settings />
     },
     {
         title: 'Search Engine Optimization (SEO)',
         description: 'We help improve your website’s ranking in search engine results. We help improve your website’s ranking in search engine results. We help improve your website’s ranking in search engine results. We help improve your website’s ranking in search engine results. We help improve your website’s ranking in search engine results. ',
-        image: 'https://images.pexels.com/photos/2047905/pexels-photo-2047905.jpeg',
-        icon: <Settings />
     },
 ];
 
@@ -39,14 +30,14 @@ const variants = [
     { from: 'from-pink-50', to: 'to-fuchsia-50', svg: '/shapes/graphic.svg' },
 ];
 
-export default function Services() {
-    const t = useTranslations('Services')
+export default function Projects() {
+    const t = useTranslations('Projects')
     const locale = useLocale()
     return (
-        <section className="py-16 bg-gray-50" id="services">
+        <section className="py-16 bg-gray-50" id="projects">
             <div className="container mx-auto px-6">
 
-                <div className="text-center max-w-3xl mx-auto mb-16">
+                <div className="text-center max-w-3xl mx-auto mb-1">
                     <motion.h2
                         className="mt-3 text-4xl md:text-5xl font-extrabold text-gray-800 leading-tight"
                         initial={{ opacity: 0, y: 50 }}
@@ -78,7 +69,7 @@ export default function Services() {
                 </div>
                 {/* Card */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    {services.map((service, i) => (
+                    {projects.map((project, i) => (
                         <motion.div
                             key={i}
                             initial={{ opacity: 0, y: 50 }}
@@ -87,8 +78,8 @@ export default function Services() {
                             viewport={{ once: false }}
                         >
                             <Card
-                                title={service.title}
-                                description={service.description}
+                                title={project.title}
+                                description={project.description}
                                 svgSrc={variants[i % variants.length].svg}
                                 gradientFrom={variants[i % variants.length].from}
                                 gradientTo={variants[i % variants.length].to}
@@ -105,10 +96,10 @@ export default function Services() {
                     viewport={{ once: false }}
                 >
                     <Link
-                        href="/services"
+                        href="/projects"
                         className="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
                     >
-                        Show All Services
+                        Show All Projects
                     </Link>
                 </motion.div>
             </div>
