@@ -18,7 +18,7 @@ export default function Navbar() {
                     <img
                         src="https://www.alex4prog.com/wp-content/uploads/2022/09/AfP-simlified-Logo-layers2.ai_-300x169.png"
                         alt="Logo"
-                        className="max-h-12"
+                        className="max-h-18"
                     />
                 </div>
 
