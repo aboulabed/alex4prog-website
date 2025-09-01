@@ -32,76 +32,86 @@ const services = [
     },
 ];
 
+const variants = [
+    { from: 'from-orange-50', to: 'to-rose-50', svg: '/shapes/pc.svg' },
+    { from: 'from-violet-50', to: 'to-purple-50', svg: '/shapes/mobile.svg' },
+    { from: 'from-green-50', to: 'to-emerald-50', svg: '/shapes/web.svg' },
+    { from: 'from-pink-50', to: 'to-fuchsia-50', svg: '/shapes/graphic.svg' },
+];
 
 export default function ServicesSection() {
     const t = useTranslations('Services')
     const locale = useLocale()
     return (
-        <section className="px-6 py-16 bg-gray-50" id="services">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-                <motion.h2
-                    className="mt-3 text-4xl md:text-5xl font-extrabold text-gray-800 leading-tight"
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    viewport={{ once: false }}
-                >
-                    {t('sectionTitle')}
-                </motion.h2>
+        <section className="py-16 bg-gray-50" id="services">
+            <div className="container mx-auto px-6">
 
-                <motion.p
-                    className="mt-5 text-gray-600 text-base md:text-lg leading-relaxed"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                    viewport={{ once: false }}
-                >
-                    {locale === 'ar' ? (
-                        <>
-                            في <span className="font-semibold text-red-600">الاسكندرية للبرمجة</span>
-                        </>
-                    ) : (
-                        <>
-                            at <span className="font-semibold text-red-600">Alex4Prog</span>
-                        </>
-                    )}
-                    {t('sectionDescription')}
-                </motion.p>
-            </div>
-            {/* Card */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                {services.map((service, i) => (
-                    <motion.div
-                        key={i}
+                <div className="text-center max-w-3xl mx-auto mb-16">
+                    <motion.h2
+                        className="mt-3 text-4xl md:text-5xl font-extrabold text-gray-800 leading-tight"
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: i * 0.2 }}
+                        transition={{ duration: 0.6 }}
                         viewport={{ once: false }}
                     >
-                        <Card
-                            title={service.title}
-                            description={service.description}
-                            image={service.image}
-                            icon={service.icon}
-                        />
-                    </motion.div>
-                ))}
-            </div>
+                        {t('sectionTitle')}
+                    </motion.h2>
 
-            <motion.div
-                className="text-center mt-12"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-                viewport={{ once: false }}
-            >
-                <Link
-                    href="/services"
-                    className="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+                    <motion.p
+                        className="mt-5 text-gray-600 text-base md:text-lg leading-relaxed"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        viewport={{ once: false }}
+                    >
+                        {locale === 'ar' ? (
+                            <>
+                                في <span className="font-semibold text-red-600">الاسكندرية للبرمجة</span>
+                            </>
+                        ) : (
+                            <>
+                                at <span className="font-semibold text-red-600">Alex4Prog</span>
+                            </>
+                        )}
+                        {t('sectionDescription')}
+                    </motion.p>
+                </div>
+                {/* Card */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    {services.map((service, i) => (
+                        <motion.div
+                            key={i}
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: i * 0.2 }}
+                            viewport={{ once: false }}
+                        >
+                            <Card
+                                title={service.title}
+                                description={service.description}
+                                svgSrc={variants[i % variants.length].svg}
+                                gradientFrom={variants[i % variants.length].from}
+                                gradientTo={variants[i % variants.length].to}
+                            />
+                        </motion.div>
+                    ))}
+                </div>
+
+                <motion.div
+                    className="text-center mt-12"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.5 }}
+                    viewport={{ once: false }}
                 >
-                    Show All Services
-                </Link>
-            </motion.div>
+                    <Link
+                        href="/services"
+                        className="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+                    >
+                        Show All Services
+                    </Link>
+                </motion.div>
+            </div>
         </section>
     );
 }
