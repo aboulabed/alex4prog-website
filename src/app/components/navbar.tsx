@@ -24,15 +24,17 @@ export default function Navbar() {
 
                 {/* Center - Nav Links */}
                 <ul className="flex gap-6 text-sm font-medium text-gray-800">
-                    <li className="text-red-500 font-bold text-base hover:-translate-y-1 hover:text-red-600
+                    <li className="text-red-500 font-bold text-2xl
+ hover:-translate-y-1 hover:text-red-600
  cursor-pointer transition">{t('Home')}</li>
-                    <li className="hover:text-red-500 font-bold text-base hover:-translate-y-1
+                    <li className="hover:text-red-500 font-bold text-2xl
+ hover:-translate-y-1
  cursor-pointer transition">{t('Services')}</li>
-                    <li className="hover:text-red-500 font-bold text-base hover:-translate-y-1
+                    <li className="hover:text-red-500 font-bold text-2xl hover:-translate-y-1
  cursor-pointer transition">{t('Projects')}</li>
-                    <li className="hover:text-red-500 font-bold text-base hover:-translate-y-1
+                    <li className="hover:text-red-500 font-bold text-2xl hover:-translate-y-1
  cursor-pointer transition">{t('Why Us')}</li>
-                    <li className="hover:text-red-500 font-bold text-base hover:-translate-y-1
+                    <li className="hover:text-red-500 font-bold text-2xl hover:-translate-y-1
  cursor-pointer transition">{t('Contact')}</li>
                 </ul>
 

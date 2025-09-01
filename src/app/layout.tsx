@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { IBM_Plex_Sans_Arabic, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale } from "next-intl/server";
-const geistSans = Geist({
+
+const geistSans = IBM_Plex_Sans_Arabic({
   variable: "--font-geist-sans",
-  subsets: ["latin"],
+  subsets: ["arabic", 'latin'],
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
@@ -27,7 +30,7 @@ export default async function RootLayout({
   return (
     <html dir={locale == 'ar' ? "rtl" : "ltr"} lang={locale}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased font-sans`}
       >
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
 
