@@ -31,39 +31,44 @@ export default function LanguageSwitcher({ messages }: LanguageSwitcherProps) {
     return (
         <div className="relative z-50">
             {/* Desktop Icon Button */}
-            <div className="hidden lg:inline-block">
+            <div
+                className="hidden lg:inline-block relative"
+                onMouseEnter={() => setOpen(true)}
+                onMouseLeave={() => setOpen(false)}
+            >
                 <button
-                    onClick={() => setOpen(prev => !prev)}
                     className="flex items-center gap-2 text-gray-700 font-bold px-4 py-2 rounded hover:text-red-700 transition"
                 >
                     <Languages className="w-5 h-5" />
                 </button>
 
-                {open && (
-                    <div className={`absolute mt-2 w-40 bg-white border border-gray-200 rounded shadow-md ${dir === 'rtl' ? 'left-0' : 'right-0'}`}
+                <div
+                    className={`absolute w-40 bg-white border border-gray-200 rounded shadow-md transform transition-all duration-200 ease-out
+      ${dir === 'rtl' ? 'left-0' : 'right-0'}
+      ${open ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}
+    `}
+                >
+                    <button
+                        onClick={() => handleChange('ar')}
+                        disabled={locale === 'ar'}
+                        className={`w-full text-left px-4 py-2 text-sm transition font-bold ${locale === 'ar'
+                            ? 'text-gray-400 cursor-not-allowed'
+                            : 'text-red-600 hover:bg-red-600 hover:text-white'
+                            }`}
                     >
-                        <button
-                            onClick={() => handleChange('ar')}
-                            disabled={locale === 'ar'}
-                            className={`w-full text-left px-4 py-2 text-sm transition font-bold ${locale === 'ar'
-                                ? 'text-gray-400 cursor-not-allowed'
-                                : 'text-red-600 hover:bg-red-600 hover:text-white'
-                                }`}
-                        >
-                            {messages('Arabic')}
-                        </button>
-                        <button
-                            onClick={() => handleChange('en')}
-                            disabled={locale === 'en'}
-                            className={`w-full text-left px-4 py-2 text-sm transition font-bold ${locale === 'en'
-                                ? 'text-gray-400 cursor-not-allowed'
-                                : 'text-red-600 hover:bg-red-600 hover:text-white'
-                                }`}
-                        >
-                            {messages('English')}
-                        </button>
-                    </div>
-                )}
+                        {messages('Arabic')}
+                    </button>
+                    <button
+                        onClick={() => handleChange('en')}
+                        disabled={locale === 'en'}
+                        className={`w-full text-left px-4 py-2 text-sm transition font-bold ${locale === 'en'
+                            ? 'text-gray-400 cursor-not-allowed'
+                            : 'text-red-600 hover:bg-red-600 hover:text-white'
+                            }`}
+                    >
+                        {messages('English')}
+                    </button>
+                </div>
             </div>
 
             {/* Mobile - Side by Side Buttons */}
