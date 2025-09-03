@@ -15,5 +15,16 @@
     "Projects": {
         "sectionTitle": "Our Projects",
         "sectionDescription": ", we deliver tailored web & mobile solutions, SEO strategies, and creative design to help your business grow in today’s digital landscape."
+    "JoinUs": {
+        "sectionTitle": "Join to Our Team",
+        "openingsTitle": "Current Openings",
+        "applyNow": "Apply Now",
+        "fillYourInfo": "Please fill in your basic information below.",
+        "name": "Name",
+        "email": "Email",
+        "upload_cv": "Upload Cv",
+        "cancel": "Cancel",
+        "submit": "Submit"
+    },
     }
 }
