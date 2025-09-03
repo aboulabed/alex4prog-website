@@ -1,5 +1,6 @@
 'use client';
 import Card from './Card'
+import Heading from './Heading'
 import { useTranslations, useLocale } from 'next-intl';
 import { motion } from 'motion/react';
 
@@ -32,42 +33,21 @@ const variants = [
 export default function WhyUs() {
     const t = useTranslations('WhyUs')
     const locale = useLocale()
+    const description = (
+        <>
+            {locale === 'ar' ? (
+                <>لماذا <span className="font-semibold text-red-600">الاسكندرية للبرمجة</span></>
+            ) : (
+                <>Why <span className="font-semibold text-red-600">Alex4Prog</span></>
+            )}{" "}
+            {t('sectionDescription')}
+        </>
+    );
     return (
         <section className="py-16 bg-gray-50" id="whyus">
             <div className="container mx-auto px-6">
 
-                <div className="text-center max-w-3xl mx-auto mb-16">
-                    <motion.h2
-                        className="mt-3 text-4xl md:text-5xl font-extrabold text-gray-800 leading-tight"
-                        initial={{ opacity: 0, y: 50 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        viewport={{ once: false }}
-                    >
-                        {t('sectionTitle')}
-                    </motion.h2>
-
-                    <motion.p
-                        className="mt-5 text-gray-600 text-base md:text-lg leading-relaxed"
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        viewport={{ once: false }}
-                    >
-                        {locale === 'ar' ? (
-                            <>
-                                لماذا <span className="font-semibold text-red-600">الاسكندرية للبرمجة</span>؟
-                            </>
-                        ) : (
-                            <>
-                                Why <span className="font-semibold text-red-600">Alex4Prog</span>?
-                            </>
-                        )}
-                        {" "}
-
-                        {t('sectionDescription')}
-                    </motion.p>
-                </div>
+                <Heading title={t('sectionTitle')} description={description} />
                 {/* Cards */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
                     {reasons.map((reason, i) => (

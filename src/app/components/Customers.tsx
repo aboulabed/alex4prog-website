@@ -1,5 +1,6 @@
 'use client';
 import Card from './Card'
+import Heading from './Heading'
 import { useTranslations, useLocale } from 'next-intl';
 import { motion } from 'motion/react';
 
@@ -29,44 +30,28 @@ const variants = [
     { from: 'from-pink-50', to: 'to-fuchsia-50', svg: '/shapes/graphic.svg' },
 ];
 
-export default function WhyUs() {
+export default function Customers() {
     const t = useTranslations('Customers')
     const locale = useLocale()
+    const description = (
+        <>
+            {locale === 'ar' ? (
+                <>
+                    <span className="font-semibold text-red-600">عملاؤنا</span>
+                </>
+            ) : (
+                <>
+                    Our <span className="font-semibold text-red-600">Customers</span>
+                </>
+            )}{" "}
+            {t('sectionDescription')}
+        </>
+    );
     return (
         <section className="py-16 bg-gray-50" id="customers">
             <div className="container mx-auto px-6">
 
-                <div className="text-center max-w-3xl mx-auto mb-16">
-                    <motion.h2
-                        className="mt-3 text-4xl md:text-5xl font-extrabold text-gray-800 leading-tight"
-                        initial={{ opacity: 0, y: 50 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        viewport={{ once: false }}
-                    >
-                        {t('sectionTitle')}
-                    </motion.h2>
-
-                    <motion.p
-                        className="mt-5 text-gray-600 text-base md:text-lg leading-relaxed"
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        viewport={{ once: false }}
-                    >
-                        {locale === 'ar' ? (
-                            <>
-                                عملاؤنا
-                            </>
-                        ) : (
-                            <>
-                                Our <span className="font-semibold text-red-600">Customers</span>
-                            </>
-                        )}
-                        {" "}
-                        {t('sectionDescription')}
-                    </motion.p>
-                </div>
+                <Heading title={t('sectionTitle')} description={description} />
                 {/* Cards */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
                     {reasons.map((reason, i) => (
