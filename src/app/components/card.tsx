@@ -27,6 +27,8 @@ export default function Card({
                 gradientFrom,
                 gradientTo,
                 'p-6 sm:p-7 md:p-8',
+                // Fixed visual height across cards with flexibility for content
+                'min-h-[260px] md:min-h-[300px] h-full flex',
                 'shadow-sm transition-transform duration-300 hover:-translate-y-0.5',
             ].join(' ')}
         >
@@ -55,7 +57,7 @@ export default function Card({
             )}
 
             {/* Content */}
-            <div className="relative z-10 flex flex-col gap-3">
+            <div className="relative z-10 flex h-full flex-col gap-3">
 
                 {/* Title */}
                 <h3 className="mt-1 text-xl font-semibold text-gray-900">{title}</h3>
@@ -66,7 +68,7 @@ export default function Card({
                 {/* CTA */}
                 <a
                     href={href}
-                    className="mt-2 inline-flex w-fit items-center gap-1 text-sm font-semibold text-gray-900 underline-offset-4 hover:underline"
+                    className="mt-auto inline-flex w-fit items-center gap-1 text-sm font-semibold text-gray-900 underline-offset-4 hover:underline"
                 >
                     Learn more <span aria-hidden>→</span>
                 </a>
