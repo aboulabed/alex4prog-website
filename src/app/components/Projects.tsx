@@ -37,7 +37,7 @@ export default function Projects() {
         <section className="py-16 bg-gray-50" id="projects">
             <div className="container mx-auto px-6">
 
-                <div className="text-center max-w-3xl mx-auto mb-1">
+                <div className="text-center max-w-3xl mx-auto mb-16">
                     <motion.h2
                         className="mt-3 text-4xl md:text-5xl font-extrabold text-gray-800 leading-tight"
                         initial={{ opacity: 0, y: 50 }}
@@ -68,10 +68,11 @@ export default function Projects() {
                     </motion.p>
                 </div>
                 {/* Card */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
                     {projects.map((project, i) => (
                         <motion.div
                             key={i}
+                            className="h-full"
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: i * 0.2 }}
