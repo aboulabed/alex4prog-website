@@ -4,6 +4,7 @@ import Projects from './components/Projects'
 import WhyUs from './components/WhyUs'
 import Customers from './components/Customers'
 import JoinUs from './components/JoinUs'
+import ContactUs from './components/ContactUs'
 export default function App() {
   return (
     <div className="space-y-12 md:space-y-24 bg-gray-50">
@@ -13,6 +14,7 @@ export default function App() {
       <WhyUs />
       <Customers />
       <JoinUs />
+      <ContactUs />
     </div>
   )
 

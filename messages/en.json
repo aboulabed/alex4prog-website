@@ -34,5 +34,22 @@
     "Customers": {
         "sectionTitle": "Our Customers",
         "sectionDescription": ", we deliver tailored web & mobile solutions, SEO strategies, and creative design to help your business grow in today’s digital landscape."
+    },
+    "ContactUs": {
+        "title": "Contact Us",
+        "description": "We would love to hear from you.",
+        "formTitle": "Send us a message",
+        "formDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
+        "name": "Name",
+        "company": "Company",
+        "phone": "Phone",
+        "email": "Email",
+        "subject": "Subject",
+        "message": "Message",
+        "sendMessage": "Send Message",
+        "infoTitle": "Get in touch",
+        "infoDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
+        "location": "Location",
+        "callUs": "Call Us"
     }
 }
