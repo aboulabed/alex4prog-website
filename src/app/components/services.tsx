@@ -2,7 +2,6 @@
 import Link from 'next/link';
 import Card from './Card'
 import Heading from './Heading'
-import { Settings } from 'lucide-react'
 import { useTranslations, useLocale } from 'next-intl';
 import { motion } from 'motion/react';
 
@@ -10,26 +9,18 @@ const services = [
     {
         title: 'Web Design',
         description: 'We provide professional website design services compatible with all devices. We help improve your website’s ranking in search engine results. We help improve your website’s ranking in search engine results. We help improve your website’s ranking in search engine results. We help improve your website’s ranking in search engine results. ',
-        image: 'https://images.pexels.com/photos/2047905/pexels-photo-2047905.jpeg',
-        icon: <Settings />
     },
     {
         title: 'App Development',
         description: 'We develop modern applications using the latest technologies. We help improve your website’s ranking in search engine results. We help improve your website’s ranking in search engine results. We help improve your website’s ranking in search engine results. We help improve your website’s ranking in search engine results. ',
-        image: 'https://images.pexels.com/photos/2047905/pexels-photo-2047905.jpeg',
-        icon: <Settings />
     },
     {
         title: 'Search Engine Optimization (SEO)',
         description: 'We help improve your website’s ranking in search engine results. We help improve your website’s ranking in search engine results. We help improve your website’s ranking in search engine results. We help improve your website’s ranking in search engine results. We help improve your website’s ranking in search engine results. ',
-        image: 'https://images.pexels.com/photos/2047905/pexels-photo-2047905.jpeg',
-        icon: <Settings />
     },
     {
         title: 'Search Engine Optimization (SEO)',
         description: 'We help improve your website’s ranking in search engine results. We help improve your website’s ranking in search engine results. We help improve your website’s ranking in search engine results. We help improve your website’s ranking in search engine results. We help improve your website’s ranking in search engine results. ',
-        image: 'https://images.pexels.com/photos/2047905/pexels-photo-2047905.jpeg',
-        icon: <Settings />
     },
 ];
 

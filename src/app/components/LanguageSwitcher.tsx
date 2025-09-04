@@ -3,7 +3,7 @@
 import { useTransition, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useLocale } from 'next-intl';
-import { Languages } from 'lucide-react';
+import { GrLanguage } from "react-icons/gr";
 type LanguageSwitcherProps = {
     messages: (key: string) => string;
 };
@@ -39,7 +39,7 @@ export default function LanguageSwitcher({ messages }: LanguageSwitcherProps) {
                 <button
                     className="flex items-center gap-2 text-gray-700 font-bold px-4 py-2 rounded hover:text-red-700 transition"
                 >
-                    <Languages className="w-5 h-5" />
+                    <GrLanguage className="w-5 h-5" />
                 </button>
 
                 <div

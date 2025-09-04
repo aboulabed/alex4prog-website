@@ -2,7 +2,17 @@
 
 import { useTranslations } from 'next-intl';
 import { motion } from 'motion/react';
-import { Mail, Phone, MapPin, Send, Building, User, MessageSquare, Type } from 'lucide-react';
+import {
+    FaEnvelope,   // Mail  
+    FaPhone,      // Phone  
+    FaMapMarkerAlt, // MapPin  
+    FaPaperPlane, // Send  
+    FaBuilding,   // Building  
+    FaUser,       // User  
+    FaCommentDots,// MessageSquare  
+    FaFont        // Type (represents text/font)  
+} from "react-icons/fa";
+
 import Heading from './Heading';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -13,17 +23,17 @@ const ContactUs = () => {
 
     const contactDetails = [
         {
-            icon: <MapPin size={24} className="text-indigo-600" />,
+            icon: <FaMapMarkerAlt size={24} className="text-indigo-600" />,
             title: t('location'),
             info: 'Alexandria - Egypt',
         },
         {
-            icon: <Mail size={24} className="text-indigo-600" />,
+            icon: <FaEnvelope size={24} className="text-indigo-600" />,
             title: t('email'),
             info: 'admin@gmail.com',
         },
         {
-            icon: <Phone size={24} className="text-indigo-600" />,
+            icon: <FaPhone size={24} className="text-indigo-600" />,
             title: t('callUs'),
             info: '+20 1000335080',
         },
@@ -51,32 +61,32 @@ const ContactUs = () => {
                         <form className="space-y-4 flex-1">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div className="relative">
-                                    <User className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+                                    <FaUser className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
                                     <Input placeholder={t('name')} className="pl-10" />
                                 </div>
                                 <div className="relative">
-                                    <Building className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+                                    <FaBuilding className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
                                     <Input placeholder={t('company')} className="pl-10" />
                                 </div>
                                 <div className="relative">
-                                    <Phone className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+                                    <FaPhone className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
                                     <Input type="tel" placeholder={t('phone')} className="pl-10" />
                                 </div>
                                 <div className="relative">
-                                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+                                    <FaEnvelope className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
                                     <Input type="email" placeholder={t('email')} className="pl-10" />
                                 </div>
                             </div>
                             <div className="relative">
-                                <Type className="absolute left-3 top-5 -translate-y-1/2 h-5 w-5 text-gray-400" />
+                                <FaFont className="absolute left-3 top-5 -translate-y-1/2 h-5 w-5 text-gray-400" />
                                 <Input placeholder={t('subject')} className="pl-10" />
                             </div>
                             <div className="relative">
-                                <MessageSquare className="absolute left-3 top-5 h-5 w-5 text-gray-400" />
+                                <FaCommentDots className="absolute left-3 top-5 h-5 w-5 text-gray-400" />
                                 <Textarea placeholder={t('message')} className="pl-10 pt-4" rows={5} />
                             </div>
                             <Button type="submit" className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 rounded-lg flex items-center justify-center gap-2">
-                                <Send size={18} />
+                                <FaPaperPlane size={18} />
                                 {t('sendMessage')}
                             </Button>
                         </form>
