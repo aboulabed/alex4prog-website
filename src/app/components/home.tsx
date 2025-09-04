@@ -26,8 +26,10 @@ export default function MotionCarousel() {
     const [prev, setPrev] = useState(0);
     const currentImgRef = useRef(null);
     const prevImgRef = useRef(null);
-    const titleRef = useRef(null);
-    const subtitleRef = useRef(null);
+    const titleRef = useRef<HTMLHeadingElement>(null);
+    const subtitleRef = useRef<HTMLParagraphElement>(null);
+
+
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -47,12 +49,25 @@ export default function MotionCarousel() {
         }
 
         // Animate title and subtitle
-        animate(titleRef.current, { opacity: [0, 1], y: [40, 0] }, { duration: 0.6, delay: 0.2 });
-        animate(subtitleRef.current, { opacity: [0, 1], y: [20, 0] }, { duration: 0.6, delay: 0.4 });
+        if (titleRef.current) {
+            animate(
+                titleRef.current,
+                { opacity: [0, 1], y: [40, 0] },
+                { duration: 0.6, delay: 0.2 }
+            );
+        }
+
+        if (subtitleRef.current) {
+            animate(
+                subtitleRef.current,
+                { opacity: [0, 1], y: [20, 0] },
+                { duration: 0.6, delay: 0.4 }
+            );
+        }
     }, [current]);
 
     return (
-        <section className="relative w-full h-screen overflow-hidden">
+        <section className="relative w-full h-screen overflow-hidden" id="home">
             {/* Previous image */}
             <img
                 ref={prevImgRef}

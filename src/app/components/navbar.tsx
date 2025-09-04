@@ -10,7 +10,7 @@ export default function Navbar() {
     const locale = useLocale();
 
     return (
-        <nav className="bg-white shadow-sm px-6 py-4 ">
+        <nav className="sticky top-0 z-50 bg-white shadow-sm px-6 py-4">
             {/* Desktop Nav */}
             <div className="hidden lg:flex justify-between items-center">
                 {/* Left - Logo */}
@@ -24,19 +24,48 @@ export default function Navbar() {
 
                 {/* Center - Nav Links */}
                 <ul className="flex gap-6 text-sm font-medium text-gray-800">
-                    <li className="text-red-500 font-bold text-2xl
- hover:-translate-y-1 hover:text-red-600
- cursor-pointer transition">{t('Home')}</li>
-                    <li className="hover:text-red-500 font-bold text-2xl
- hover:-translate-y-1
- cursor-pointer transition">{t('Services')}</li>
-                    <li className="hover:text-red-500 font-bold text-2xl hover:-translate-y-1
- cursor-pointer transition">{t('Projects')}</li>
-                    <li className="hover:text-red-500 font-bold text-2xl hover:-translate-y-1
- cursor-pointer transition">{t('Why Us')}</li>
-                    <li className="hover:text-red-500 font-bold text-2xl hover:-translate-y-1
- cursor-pointer transition">{t('Contact')}</li>
+                    <li>
+                        <a
+                            href="#home"
+                            className="text-red-500 font-bold text-2xl hover:-translate-y-1 hover:text-red-600 cursor-pointer transition inline-block"
+                        >
+                            {t('Home')}
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="#services"
+                            className="hover:text-red-500 font-bold text-2xl hover:-translate-y-1 cursor-pointer transition inline-block"
+                        >
+                            {t('Services')}
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="#projects"
+                            className="hover:text-red-500 font-bold text-2xl hover:-translate-y-1 cursor-pointer transition inline-block"
+                        >
+                            {t('Projects')}
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="#whyus"
+                            className="hover:text-red-500 font-bold text-2xl hover:-translate-y-1 cursor-pointer transition inline-block"
+                        >
+                            {t('Why Us')}
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="#contact"
+                            className="hover:text-red-500 font-bold text-2xl hover:-translate-y-1 cursor-pointer transition inline-block"
+                        >
+                            {t('Contact')}
+                        </a>
+                    </li>
                 </ul>
+
 
                 {/* Right - Language Switcher */}
                 <LanguageSwitcher messages={t} />
@@ -68,11 +97,46 @@ export default function Navbar() {
                     }`}
             >
                 <ul className="mt-4 space-y-3 text-sm font-medium text-gray-800">
-                    <li className="text-red-600 font-semibold cursor-pointer transition mx-5">{t('Home')}</li>
-                    <li className="hover:text-red-500 cursor-pointer transition mx-5">{t('Services')}</li>
-                    <li className="hover:text-red-500 cursor-pointer transition mx-5">{t('Projects')}</li>
-                    <li className="hover:text-red-500 cursor-pointer transition mx-5">{t('Why Us')}</li>
-                    <li className="hover:text-red-500 cursor-pointer transition mx-5">{t('Contact')}</li>
+                    <li>
+                        <a
+                            href="#home"
+                            className="text-red-600 font-semibold cursor-pointer transition mx-5 inline-block"
+                        >
+                            {t('Home')}
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="#services"
+                            className="hover:text-red-500 cursor-pointer transition mx-5 inline-block"
+                        >
+                            {t('Services')}
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="#projects"
+                            className="hover:text-red-500 cursor-pointer transition mx-5 inline-block"
+                        >
+                            {t('Projects')}
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="#whyus"
+                            className="hover:text-red-500 cursor-pointer transition mx-5 inline-block"
+                        >
+                            {t('Why Us')}
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="#contact"
+                            className="hover:text-red-500 cursor-pointer transition mx-5 inline-block"
+                        >
+                            {t('Contact')}
+                        </a>
+                    </li>
                 </ul>
 
                 {/* Mobile Language Switcher */}
