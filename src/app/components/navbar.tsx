@@ -1,13 +1,12 @@
 'use client';
 
 import { useState } from 'react';
-import { useTranslations, useLocale } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const t = useTranslations('Navbar');
-    const locale = useLocale();
 
     return (
         <nav className="sticky top-0 z-50 bg-white shadow-sm px-6 py-4">
