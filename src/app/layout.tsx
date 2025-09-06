@@ -4,6 +4,7 @@ import "./globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale } from "next-intl/server";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 const geistSans = IBM_Plex_Sans_Arabic({
   variable: "--font-geist-sans",
@@ -36,6 +37,7 @@ export default async function RootLayout({
         <NextIntlClientProvider>
           <Navbar />
           {children}
+          <Footer />
         </NextIntlClientProvider>
 
       </body>

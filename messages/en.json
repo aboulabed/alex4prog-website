@@ -51,5 +51,16 @@
         "infoDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
         "location": "Location",
         "callUs": "Call Us"
+    },
+    "footer": {
+        "company": "Company",
+        "services": "Services",
+        "projects": "Projects",
+        "whyus": "Why us",
+        "contact": "Contact",
+        "linkedin": "LinkedIn",
+        "youtube": "YouTube",
+        "facebook": "Facebook",
+        "copyright": "© {year} Alex4prog. All rights reserved"
     }
 }
